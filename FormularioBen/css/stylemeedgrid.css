@@ -1,0 +1,55 @@
+/*Divs no tocar*/
+
+/*<div class="box-fluid meed-grid debug">*/
+
+.box-fluid, .box-fixed { display: block; margin: 0 auto;  }
+/*
+.meed-grid.debug { padding: 5px; -webkit-border-raidus: 8px; border-radius: 8px; }*/
+/*
+.meed-grid.debug [class*="col-"] { padding: 10px; margin: 5px 0; background: #ddd; -webkit-border-radius: 4px; border-radiux: 4px; }*/
+.meed-grid.debug [class*="col-"]:nth-of-type(even) {  }
+.meed-grid.debug.gutters { padding: 5px 0; }
+
+.meed-grid, .meed-grid [class*="col-"] { 
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+.meed-grid [class*="col-"] { float: left; }
+.meed-grid.gutters [class*="col-"] { margin-left: 7px; margin-right: 7px; }
+.meed-grid.fixed { width: 960px; }
+
+
+.meed-grid .col-1  { width: 56%;   }
+.meed-grid .col-2  { width: 50%;    }
+.meed-grid .col-3  { width: 33.33%; }
+.meed-grid .col-4  { width: 25%;    }
+.meed-grid .col-5  { width: 20%;    }
+.meed-grid .col-6  { width: 16.66%; }
+.meed-grid .col-7  { width: 14.28%; }
+.meed-grid .col-8  { width: 12.5%;  }
+.meed-grid .col-9  { width: 11.11%; }
+.meed-grid .col-10 { width: 10%;    }
+.meed-grid .col-14  { width: 33.33%; }
+.meed-grid .col-15 { width: 66.66%;    }
+.meed-grid .col-70 { width: 70%;    }
+.meed-grid .col-30 { width: 30%;    }
+
+.meed-grid.gutters .col-1  { width: calc(100%   - 14px); }
+.meed-grid.gutters .col-2  { width: calc(50%    - 14px); }
+.meed-grid.gutters .col-3  { width: calc(33.33% - 14px); }
+.meed-grid.gutters .col-4  { width: calc(25%    - 14px); }
+.meed-grid.gutters .col-5  { width: calc(20%    - 14px); }
+.meed-grid.gutters .col-6  { width: calc(16.66% - 14px); }
+.meed-grid.gutters .col-7  { width: calc(14.28% - 14px); }
+.meed-grid.gutters .col-8  { width: calc(12.5%  - 14px); }
+.meed-grid.gutters .col-9  { width: calc(11.11% - 14px); }
+.meed-grid.gutters .col-10 { width: calc(10%    - 14px); }
+
+
+.meed-grid:before, .meed-grid:after { content: " "; display: table; }
+.meed-grid:after { clear: both; }
+.meed-grid { *zoom: 1; }
+
+/*Fin divs no tocar*/

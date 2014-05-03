@@ -1,0 +1,226 @@
+.container{
+ 	width: available;
+}
+#encabezado{
+  background-color: yellowgreen;
+}
+#logo_municipio {
+ }
+#label_registrate{
+   color: #ffffff;
+   font-size: x-large;
+   margin: 0px;                
+}
+#label_ingresar{
+  color: #ffffff;
+  font-size: x-large;
+}
+.navbar-form{
+padding-top: 2%!important;
+}
+
+.wrap {
+	position:relative;
+	margin:0 auto;
+	width:900px;
+}
+#header, #footer {
+	width:100%;
+	float:left;
+}
+.navbar-right{
+     margin: 0 auto;
+}
+   
+
+      #label_registrate{
+                 color: #ffffff;
+		float: right;
+		margin-top: 5%;
+            }
+            #label_accesar{
+                 color: #ffffff;
+            }
+            
+            #btn_limpieza{
+              position: relative;
+              border-radius: 50%;
+              width: 100%;
+              height: auto;
+              padding-top: 100%;
+              background-image: url("../img/btn_limpieza.png");
+              background-size: 100% 100%;
+          
+            }
+                  #btn_ventas{
+              position: relative;
+              border-radius: 50%;
+              width: 100%;
+              height: auto;
+              padding-top: 100%;
+              background-image: url("../img/btn_ventas.png");
+              background-size: 100% 100%;
+          
+            }
+                        #btn_chofer{
+              position: relative;
+              border-radius: 50%;
+              width: 100%;
+              height: auto;
+              padding-top: 100%;
+              background-image: url("../img/btn_chofer.png");
+              background-size: 100% 100%;
+          
+            }
+            
+                     #btn_secretaria{
+              position: relative;
+              border-radius: 50%;
+              width: 100%;
+              height: auto;
+              padding-top: 100%;
+              background-image: url("../img/btn_secretaria.png");
+              background-size: 100% 100%;
+          
+            }
+            #btn_cocinero{
+              position: relative;
+              border-radius: 50%;
+              width: 100%;
+              height: auto;
+              padding-top: 100%;
+              background-image: url("../img/btn_cocinero.png");
+              background-size: 100% 100%;
+          
+            }
+            #btn_auxiliar{
+              position: relative;
+              border-radius: 50%;
+              width: 100%;
+              height: auto;
+              padding-top: 100%;
+              background-image: url("../img/btn_auxiliar.png");
+              background-size: 100% 100%;
+          
+            }
+            #btn_operador{
+              position: relative;
+              border-radius: 50%;
+              width: 100%;
+              height: auto;
+              padding-top: 100%;
+              background-image: url("../img/btn_operador.png");
+              background-size: 100% 100%;
+          
+            }
+            
+                     #btn_arquitecto{
+              position: relative;
+              border-radius: 50%;
+              width: 100%;
+              height: auto;
+              padding-top: 100%;
+              background-image: url("../img/btn_arquitecto.png");
+              background-size: 100% 100%;
+          
+            }
+            #btn_contador{
+              position: relative;
+              border-radius: 50%;
+              width: 100%;
+              height: auto;
+              padding-top: 100%;
+              background-image: url("../img/btn_contador.png");
+              background-size: 100% 100%;
+          
+            }
+            #btn_ingeniero{
+              position: relative;
+              border-radius: 50%;
+              width: 100%;
+              height: auto;
+              padding-top: 100%;
+              background-image: url("../img/btn_ingeniero.png");
+              background-size: 100% 100%;
+          
+            }
+            #btn_licenciado{
+              position: relative;
+              border-radius: 50%;
+              width: 100%;
+              height: auto;
+              padding-top: 100%;
+              background-image: url("../img/btn_licenciado.png");
+              background-size: 100% 100%;
+          
+            }
+            #btn_enfermera{
+              position: relative;
+              border-radius: 50%;
+              width: 100%;
+              height: auto;
+              padding-top: 100%;
+              background-image: url("../img/btn_enfermera.png");
+              background-size: 100% 100%;
+          
+            }
+            #btn_medico{
+              position: relative;
+              border-radius: 50%;
+              width: 100%;
+              height: auto;
+              padding-top: 100%;
+              background-image: url("../img/btn_medico.png");
+              background-size: 100% 100%;
+          
+            }
+            #btn_noticias{
+              position: relative;
+              border-radius: 50%;
+              width: 100%;
+              height: auto;
+              padding-top: 100%;
+              background-image: url("../img/btn_noticias.png");
+              background-size: 100% 100%;
+          
+            }
+
+            #btn_otros{
+              position: relative;
+              border-radius: 50%;
+              width: 100%;
+              height: auto;
+              padding-top: 100%;
+              background-image: url("../img/btn_otros.png");
+              background-size: 100% 100%;
+          
+            }
+
+
+            #btn_profesiones{
+              position: relative;
+              border-radius: 50%;
+              width: 100%;
+              height: auto;
+              padding-top: 100%;
+              background-image: url("../img/btn_profesiones.png");
+              background-size: 100% 100%;
+          
+            }
+
+
+            #btn_oficios{
+              position: relative;
+              border-radius: 50%;
+              width: 100%;
+              height: auto;
+              padding-top: 100%;
+              background-image: url("../img/btn_oficios.png");
+              background-size: 100% 100%;
+          
+            }
+            .circle{
+              cursor:auto;
+            }
+            
+           

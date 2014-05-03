@@ -1,0 +1,64 @@
+/* 
+    Document   : formulario
+    Created on : 23-ene-2014, 5:45:58
+    Author     : Erick
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+        #celda_error{
+                border-right-style: hidden;
+                border-top-style: hidden;
+                border-bottom-style: hidden;
+                /*visibility: hidden;*/
+                color: red;
+                width: 40%;
+                padding-right: 10%;
+                
+            }
+            #celda_error2{
+                border-right-style: hidden;
+                border-top-style: hidden;
+                border-bottom-style: hidden;
+                /*visibility: hidden;*/
+                color: red;
+                width: 40%;
+                padding-right: 10%;
+            }
+                  #celda_error3{
+                border-right-style: hidden;
+                border-top-style: hidden;
+                border-bottom-style: hidden;
+                /*visibility: hidden;*/
+                color: red;
+                width: 40%;
+                padding-right: 10%;
+                
+            }
+            #celda_error4{
+                border-right-style: hidden;
+                border-top-style: hidden;
+                border-bottom-style: hidden;
+                /*visibility: hidden;*/
+                color: red;
+                width: 40%;
+                padding-right: 10%;
+            }
+            
+            
+            #enfermedad_person{
+                display: none;  
+            }
+            #discapacidad_person{
+                display: none;
+            }
+            #mdeporte{
+                display: none;
+            }
+            #club_person{
+                display: none;
+            }
+            #salud_person{
+                display: none;
+            }
+

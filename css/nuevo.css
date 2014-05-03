@@ -1,0 +1,79 @@
+#menu_container {
+	width:100%;
+	margin-bottom:90px;
+}
+.btn_mio {
+	/*width: 16.5%;*/
+	width: 14.0%;
+	float:left;
+	background-color:#F93;
+	color:#FFF;
+}
+#historial{
+	margin-bottom:20px;
+	
+}
+.titulo-container{
+	width: 40%;
+	margin-left: 30%;
+	margin-right: 30%;
+	background-color: #F30;
+	height: 80px;
+	position: relative;
+	margin-bottom:50px;
+}
+.texto-titulo{
+	color: #FFF;
+	text-align: center;
+	top:50%;
+	position: absolute;
+    margin-top: -0.5em;
+    overflow: hidden;
+    width: 100%;
+}
+.contenedor-izquierda{
+width:30%;
+float:left;
+margin-left:5%;
+}
+.contenedor-derecha{
+width:60%;
+float:left;
+}
+#btn-del{
+	margin-top:30%;
+	float:right;
+}
+.btn-perfil{
+	/*background:url(../fotos_perfil/perfil.png) repeat-x 0 0;*/
+}
+#imagen-perfil{
+	position:fixed;
+	top:150px;
+	width:200px;
+	background-color:#F30;
+	float:left;
+}
+.img-perfil{
+	float:left;
+	margin-right:30px;
+}
+.txt-perfil{
+	float:left;
+}
+#tablas{
+	width:80%;
+}
+#tablas th{
+	background-color: #FCC;
+}
+tr.table-striped{
+	background-color: #FCC;	
+}
+.buscar{
+	height:30px; 
+	width:200px;
+}
+.modal-color{
+	background-color:#F63;
+}
