@@ -63,49 +63,70 @@
         SyntaxHighlighter.all();
       } );
     </script>
-  <div class="container">
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <div class="container">
     <div id='fw_container'>
+    <?php
+      include ('query/conexion.php');
+      $inventario = $db->query("SELECT * from Inventario"); 
+      if (!$inventario) {
+          die('Consulta no válida: ' . mysql_error());
+      }else{ ?>
+      
         <table cellpadding='0' cellspacing='0' border='0' class='table table-striped' id='example'>
         <thead>
           <tr>
-            <th>Editar</th>
-            <th>Concepto</th>
-            <th>Unidad</th>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Marca</th>
+            <th>Modelo</th>
             <th>Cantidad</th>
-            <th>Observaciones</th>
+            <th>Medida</th>
+            <th>Costo compra</th>
+            <th>Imágen</th>
+            <th>Descripción</th>
+            <th>Tipo</th>
+            <th>Activo</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Opciones</th>
           </tr>
         </thead>
           <tbody>
+            <?php  
+            while($row = mysqli_fetch_array($inventario, MYSQLI_NUM)){ ?>
             <tr>
-              <td>Editar</td>
-              <td>Concepto</td>
-              <td>Unidad</td>
-              <td>Cantidad</td>
-              <td>Observaciones</td>
+                <td><?php echo $row[1]; ?></td>
+                <td><?php echo $row[2]; ?></td>
+                <td><?php echo $row[3]; ?></td>
+                <td><?php echo $row[4]; ?></td>
+                <td><?php echo $row[5]; ?></td>
+                <td><?php echo $row[6]; ?></td>
+                <td><?php echo $row[7]; ?></td>
+                <td><?php echo $row[9]; ?></td>
+                <td><?php echo $row[10]; ?></td>
+                <td><?php echo $row[11]; ?></td>
+                <td><?php echo $row[12]; ?></td>
+                <td><?php echo $row[13]; ?></td>
+                <td><?php echo $row[14]; ?></td>
+                <td><a href="#" class="delete" product="<?php echo $row[0];?>"><span class="icon-close"></span></a><a href="#" class="add" product="<?php echo $row[0];?>"><span class="icon-plus"></span></a>
+                </td>
             </tr>
-            <tr>
-              <td>Editar</td>
-              <td>Concepto</td>
-              <td>Unidad</td>
-              <td>Cantidad</td>
-              <td>Observaciones</td>
-            </tr>
-            <tr>
-              <td>Editar</td>
-              <td>Concepto</td>
-              <td>Unidad</td>
-              <td>Cantidad</td>
-              <td>Observaciones</td>
-            </tr>
-            <tr>
-              <td>Editar</td>
-              <td>Concepto</td>
-              <td>Unidad</td>
-              <td>Cantidad</td>
-              <td>Observaciones</td>
-            </tr>
-          </tbody>
-        </table>
+            <?php  } ?>
+               </tbody>
+            </table>
+          <?php  }
+          ?>
+          <script type="text/javascript">
+            $('.delete').click(function(){
+              var product = $(this).attr('product');
+              $.post("inventario_api.php?f=delete", {id_product: product})
+              .done(function(data){
+                alert("Producto eliminado correctamente");
+                console.log(data);
+              });
+            });
+          </script>
     </div>
     <div id="DivBotonAddCon">
       <button class="botoncafe" id="BotonAddCon">
@@ -113,6 +134,6 @@
       </button>
     </div> 
   </div> <!-- fin conteiner-->
-
+ 
 
                   
