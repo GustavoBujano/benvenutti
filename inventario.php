@@ -31,6 +31,8 @@
       .ui-widget-header {
         background-color: rgba(47, 196, 41, .5);
       }
+
+      
     </style>
     <script type="text/javascript" src="js/complete.min.js"></script>
     <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
@@ -53,6 +55,7 @@
         } );
       }
       $(document).ready( function() {
+        $('#addProduct').hide();
         fnFeaturesInit();
         $('#example').dataTable( {
           "aaSorting": [[ 0, "desc" ]],
@@ -124,6 +127,17 @@
               .done(function(data){
                 alert("Producto eliminado correctamente");
                 console.log(data);
+                location.reload();
+              });
+            });
+
+            $('.add').click(function(){
+              var product = $(this).attr('product');
+              $.post("inventario_api.php?f=add", {id_product: product})
+              .done(function(data){
+                alert("Producto agregado correctamente");
+                console.log(data);
+                history.go(0);
               });
             });
           </script>
@@ -133,6 +147,51 @@
         Agregar Concepto
       </button>
     </div> 
+    <script type="text/javascript">
+      $('#BotonAddCon').click(function(){
+              $('#addProduct').show("slow");
+            });
+    </script>
+    <br>
+    <br>
+    <br>
+    <div id="addProduct">
+      <form action="upload.php" method="post" enctype="multipart/form-data">
+        <label for="codigo">Código</label>
+        <input type="text" name="codigo" id="codigo">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre">
+        <label for="marca">Marca</label>
+        <input type="text" name="marca" id="marca">
+        <label for="modelo">Modelo</label>
+        <input type="text" name="modelo" id="modelo">
+        <label for="cantidad">Cantidad</label>
+        <input type="text" name="cantidad" id="cantidad">
+        <label for="medida">Medida</label>
+        <input type="text" name="medida" id="medida">
+        <label for="compra">Costo compra</label>
+        <input type="text" name="compra" id="compra">
+        <label for="venta">Costo venta</label>
+        <input type="text" name="venta" id="venta">
+        <label for="file">Imagen</label>
+        <input type="file" name="file" id="file">
+        <label for="descripcion">Descripción</label>
+        <textarea name="descripcion" id="descripcion"></textarea>
+        <label for="tipo">Tipo</label>
+        <input type="text" name="tipo" id="tipo">
+        <label for="activo">Activo</label>
+        <input type="text" name="activo" id="activo">
+        <label for="fecha">Fecha</label>
+        <input type="date" name="fecha" id="fecha">
+        <label for="hora">Hora</label>
+        <input type="time" name="hora" id="hora">
+        <input type="hidden" name="action" value="add">
+        <input type="submit" value="Agregar">
+      </form>
+      
+    </div>
+    <br>
+    <br>
   </div> <!-- fin conteiner-->
  
 
