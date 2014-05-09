@@ -56,6 +56,7 @@
       }
       $(document).ready( function() {
         $('#addProduct').hide();
+        $('#editProduct').hide();
         fnFeaturesInit();
         $('#example').dataTable( {
           "aaSorting": [[ 0, "desc" ]],
@@ -112,7 +113,8 @@
                 <td><?php echo $row[12]; ?></td>
                 <td><?php echo $row[13]; ?></td>
                 <td><?php echo $row[14]; ?></td>
-                <td><a href="#" class="delete" product="<?php echo $row[0];?>"><span class="icon-close"></span></a><a href="#" class="add" product="<?php echo $row[0];?>"><span class="icon-plus"></span></a>
+                <td><?php if($row[12] == 1){?><a href="#" class="delete" product="<?php echo $row[0];?>"><span class="icon-close"></span></a><?php }else{ ?><a href="#" class="add" product="<?php echo $row[0];?>"><span class="icon-plus"></span></a><?php }?>
+                  <a href="#" class="edit" product="<?php echo $row[0];?>"><span class="icon-pencil"></span></a>
                 </td>
             </tr>
             <?php  } ?>
@@ -137,7 +139,33 @@
               .done(function(data){
                 alert("Producto agregado correctamente");
                 console.log(data);
-                history.go(0);
+                location.reload();
+              });
+            });
+
+            $('.edit').click(function(){
+              $('#addProduct').hide("slow");
+              $('#editProduct').show("slow");
+              var product = $(this).attr('product');
+              $.post("inventario_api.php?f=get", {id_product: product})
+              .done(function(data){
+                data = JSON.parse(data);
+                console.log(data);
+                $('#e_codigo').val(data[1]);
+                $('#e_nombre').val(data[2]);
+                $('#e_marca').val(data[3]);
+                $('#e_modelo').val(data[4]);
+                $('#e_cantidad').val(data[5]);
+                $('#e_medida').val(data[6]);
+                $('#e_compra').val(data[7]);
+                $('#e_venta').val(data[8]);
+                $('#e_descripcion').val(data[10]);
+                $('#e_tipo').val(data[11]);
+                $('#e_activo').val(data[12]);
+                $('#ed_fecha').val(data[13]);
+                $('#ed_hora').val(data[14]);
+                $('#idproduct').val(data[0]);
+                $('#image').val(data[9]);
               });
             });
           </script>
@@ -187,6 +215,45 @@
         <input type="time" name="hora" id="hora">
         <input type="hidden" name="action" value="add">
         <input type="submit" value="Agregar">
+      </form>
+      
+    </div>
+    <div id="editProduct">
+      <form action="upload.php" method="post" enctype="multipart/form-data">
+        <label for="codigo">Editar</label>
+        <input type="text" name="e_codigo" id="e_codigo">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="e_nombre" id="e_nombre">
+        <label for="marca">Marca</label>
+        <input type="text" name="e_marca" id="e_marca">
+        <label for="modelo">Modelo</label>
+        <input type="text" name="e_modelo" id="e_modelo">
+        <label for="cantidad">Cantidad</label>
+        <input type="text" name="e_cantidad" id="e_cantidad">
+        <label for="medida">Medida</label>
+        <input type="text" name="e_medida" id="e_medida">
+        <label for="compra">Costo compra</label>
+        <input type="text" name="e_compra" id="e_compra">
+        <label for="venta">Costo venta</label>
+        <input type="text" name="e_venta" id="e_venta">
+        <label for="file">Imagen</label>
+        <input type="file" name="e_file" id="e_file">
+        <label for="descripcion">Descripción</label>
+        <textarea name="e_descripcion" id="e_descripcion"></textarea>
+        <label for="tipo">Tipo</label>
+        <input type="text" name="e_tipo" id="e_tipo">
+        <label for="activo">Activo</label>
+        <input type="text" name="e_activo" id="e_activo">
+        <label for="fecha">Fecha</label>
+        <input type="date" name="e_fecha" id="e_fecha">
+        <label for="hora">Hora</label>
+        <input type="time" name="e_hora" id="e_hora">
+        <input type="hidden" name="action" value="edit">
+        <input type="hidden" name="idproduct" id="idproduct">
+        <input type="hidden" name="image" id="image">
+        <input type="hidden" name="ed_fecha" id="ed_fecha">
+        <input type="hidden" name="ed_hora" id="ed_hora">
+        <input type="submit" value="Guardar cambios">
       </form>
       
     </div>

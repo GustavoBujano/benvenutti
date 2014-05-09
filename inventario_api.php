@@ -34,4 +34,13 @@
 
 		echo json_encode($arr);
 	}
+
+	function get($connect){
+		$product = $_POST['id_product'];
+		$select = "SELECT * FROM Inventario WHERE Id_producto = $product";
+
+		$result = $connect->query($select);
+		$row = mysqli_fetch_array($result, MYSQLI_NUM);
+		echo json_encode($row);
+	}
 ?>
