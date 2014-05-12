@@ -1,95 +1,30 @@
+  <?php
+
+      include ('query/conexion.php');
+      $inventario = $db->query("SELECT * from Inventario WHERE Tipo = 1"); 
+      if (!$inventario) {
+          die('Consulta no válida: ' . mysql_error());
+      }else{ ?>
   <div class="gallery">
-  <div class="miniatura-1">
-    <img src="images/galeria/uno.jpg" alt="" />
+  <?php while($row = mysqli_fetch_array($inventario, MYSQLI_NUM)){ ?>
+    <div class="miniatura-1">
+    <img src="upload/<?php echo $row[9];?>" alt="" />
     <div class="caption">
-      <h3 id="TitMin">####</h3>
-      <h4 id="SubTitMin">No. 0X</h4>
+      <h3 id="TitMin"><?php echo $row[2];?></h3>
+      <h4 id="SubTitMin">No. <?php echo $row[1];?></h4>
+      <p><?php echo $row[10];?></p>
     </div>  
   </div>
   <div class="expgrande-1">
     <img src="images/galeria/uno.jpg" alt="" />
     <span class="close">&#x2715;</span>
   </div>
-  <div class="miniatura-2">
-    <img src="images/galeria/dos.jpg" alt="" />
-    <div class="caption">
-      <h3 id="TitMin">####</h3>
-      <h4 id="SubTitMin">No. 0X</h4>  
-    </div> 
-  </div>
-  <div class="expgrande-2">
-    <img src="images/galeria/dos.jpg" alt="" />
-    <span class="close">&#x2715;</span>
-  </div>
-  <div class="miniatura-3">
-    <img src="images/galeria/tres.jpg" alt="" />
-    <div class="caption">
-      <h3 id="TitMin">####</h3>
-      <h4 id="SubTitMin">No. 0X</h4>  
-    </div> 
-  </div>
-  <div class="expgrande-3">
-    <img src="images/galeria/tres.jpg" alt="" />
-    <span class="close">&#x2715;</span>
-  </div>
-  <div class="miniatura-4">
-    <img src="images/galeria/cuatro.jpg" alt="" />
-    <div class="caption">
-      <h3 id="TitMin">####</h3>
-      <h4 id="SubTitMin">No. 0X</h4>  
-    </div> 
-  </div>
-  <div class="expgrande-4">
-    <img src="images/galeria/cuatro.jpg" alt="" />
-    <span class="close">&#x2715;</span>
-  </div>  
-  <div class="miniatura-5">
-    <img src="images/galeria/cinco.jpg" alt="" />
-    <div class="caption">
-      <h3 id="TitMin">####</h3>
-      <h4 id="SubTitMin">No. 0X</h4>  
-    </div> 
-  </div>
-  <div class="expgrande-5">
-    <img src="images/galeria/cinco.jpg" alt="" />
-    <span class="close">&#x2715;</span>
-  </div> 
-  <div class="miniatura-6">
-    <img src="images/galeria/seis.jpg" alt="" />
-    <div class="caption">
-      <h3 id="TitMin">####</h3>
-      <h4 id="SubTitMin">No. 0X</h4>  
-    </div> 
-  </div>
-  <div class="expgrande-6">
-    <img src="images/galeria/seis.jpg" alt="" />
-    <span class="close">&#x2715;</span>
-  </div> 
-  <div class="miniatura-7">
-    <img src="images/galeria/siete.jpg" alt="" />
-    <div class="caption">
-      <h3 id="TitMin">####</h3>
-      <h4 id="SubTitMin">No. 0X</h4>  
-    </div> 
-  </div>
-  <div class="expgrande-7">
-    <img src="images/galeria/siete.jpg" alt="" />
-    <span class="close">&#x2715;</span>
-  </div> 
-  <div class="miniatura-8">
-    <img src="images/galeria/ocho.jpg" alt="" />
-    <div class="caption">
-      <h3 id="TitMin">####</h3>
-      <h4 id="SubTitMin">No. 0X</h4>  
-    </div> 
-  </div>
-  <div class="expgrande-8">
-    <img src="images/galeria/ocho.jpg" alt="" />
-    <span class="close">&#x2715;</span>
-    <!--<span class="prev">&lsaquo;</span>
-    <span class="next">&rsaquo;</span>--> 
-  </div> 
+<?php  }?>
+
+  
+
 </div>
+<?php } ?>
 <br>
 <br>
 <br>
