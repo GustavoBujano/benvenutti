@@ -1,7 +1,7 @@
   <?php
 
       include ('query/conexion.php');
-      $inventario = $db->query("SELECT * from Inventario"); 
+      $inventario = $db->query("SELECT * from Inventario WHERE Tipo = 1"); 
       if (!$inventario) {
           die('Consulta no válida: ' . mysql_error());
       }else{ ?>
